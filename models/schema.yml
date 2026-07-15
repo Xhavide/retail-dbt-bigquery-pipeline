@@ -1,0 +1,30 @@
+
+
+
+version: 2
+
+models:
+  - name: stg_retail_sales
+    description: "Cleaned and typed staging view of the raw Kaggle retail sales dataset."
+    columns:
+      - name: transaction_id
+        description: "{{ doc('retail_transaction_id') }}" # <-- Dynamically links to marts.md
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_customer_behavior_and_pricing
+    description: "{{ doc('customer_behavior_summary') }}" # <-- Dynamically links to marts.md
+    columns:
+      - name: cumulative_spending
+        description: "{{ doc('retail_gross_revenue') }}" # <-- Dynamically links to marts.md
+        tests:
+          - not_null
+
+  - name: mart_sales_time_and_trends
+    description: "Mart table that cross-references chronological sales patterns and transaction basket sizes."
+    columns:
+      - name: gross_revenue
+        description: "{{ doc('retail_gross_revenue') }}" # <-- Reusing the exact same doc block!
+        tests:
+          - not_null

@@ -1,0 +1,13 @@
+target/
+dbt_packages/
+logs/
+
+# Ignore python virtual environments and variable tokens
+dbt-env/
+venv/
+.env
+.env.*
+
+# CRITICAL SECURITY: Never upload Google Cloud service account keys
+*.json
+
