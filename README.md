@@ -37,7 +37,7 @@ An enterprise-grade executive dashboard built to visualize customer cohorts and 
 *   **Time-Series Forecasting**: Seasonal trend analysis highlighting performance fluctuations across Winter, Spring, Summer, and Fall cycles.
 
 
-
+## 📷 Dashboard Preview
 
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/ca66241962f18f03aa2829ba03d12b211df6ace1/Screenshot%202026-07-23%20031142.png)
