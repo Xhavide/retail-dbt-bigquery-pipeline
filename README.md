@@ -85,6 +85,10 @@ Developed a dimensional metrics script. Built conditional logic (CASE WHEN) to c
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/441a20e6fd847b0b84cd903370f38c858b26ab53/aggregation%20functions%20for%20user%20cohorts.png)
 
+**Step 3.2: Constructing mart_sales_time_and_trends.sql** 
+
+Built an analytical time-series script. Applied BigQuery date extraction functions to translate raw timestamps into distinct seasonal buckets (Winter, Spring, Summer, Fall) and calculated unit boundaries to isolate bulk order patterns from individual sales. And finely materialized both mart models as physical Tables in dbt_project.yml to minimize report compute latency.
+
 
 
 
