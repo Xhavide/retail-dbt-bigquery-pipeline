@@ -75,6 +75,14 @@ Wrote an atomic SQL script utilizing the {{ source() }} macro. I converted incon
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/d78d816162ab2ed9ba85355ac791fe6e0fc60599/stg_retail_sales.sql%20model%20file.png)
 
+**Phase 3: The Analytical Mart Layer (Gold Zone)** 
+
+Here, the standardized staging views are joined, aggregated, and compiled into specialized, physically materialized analytical tables optimized for fast query retrieval.
+
+**Step 3.1: Constructing mart_customer_behavior_and_pricing.sql**
+
+Developed a dimensional metrics script. Built conditional logic (CASE WHEN) to cleanly segment ages into recognized cohorts (Gen Z, Millennials, Gen X, Boomers). I have simultaneously grouped prices into analytical tiers to track how spending habits fluctuate across demographic lines.
+
 
 
 
