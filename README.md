@@ -2,6 +2,34 @@
 
 An enterprise-grade ELT data pipeline built using **dbt Core** and hosted on a cloud **Google BigQuery Data Warehouse**. This project transforms raw, chaotic transactional retail sales data from Kaggle into structured, optimized dimensional analytical data marts ready for Business Intelligence dashboarding.
 
+--------
+## 🗂 Dataset
+The dataset used in this project is a synthetic dataset from Kaggle focused in retail operations and customer interactions which contains key details such as:
+
+- Transaction ID
+- Date
+- Customer ID
+- Gender
+- Age
+- Product Category
+- Quantity
+- Price per Unit
+- Total Amount
+
+---------
+
+## 🎯 Business Questions
+- How does customer age and gender influence their purchasing behavior?
+- Are there discernible patterns in sales across different time periods?
+- Which product categories hold the highest appeal among customers?
+- What are the relationships between age, spending, and product preferences?
+- How do customers adapt their shopping habits during seasonal trends?
+- Are there distinct purchasing behaviors based on the number of items bought per transaction?
+- What insights can be gleaned from the distribution of product prices within each category?
+
+------------
+
+
 ## 🏗️ Architecture & Data Lineage
 The data architecture follows the standard **Medallion (Multi-Layer) Architecture** pattern to guarantee clean data isolation:
 
@@ -10,6 +38,23 @@ The data architecture follows the standard **Medallion (Multi-Layer) Architectur
 3. **Mart Layer (Gold/Analytics):** Pre-computes complex heavy aggregates and mathematical metrics. Materialized as physical **Tables** to optimize query latency for downstream reporting.
    * `mart_customer_behavior_and_pricing`: Segments user age cohorts (Gen Z, Millennials, Gen X, Boomers) and price brackets against spending.
    * `mart_sales_time_and_trends`: Extracts time patterns, maps transactions to seasons, and classifies basket sizes based on unit quantities.
+
+---------
+
+## 🛠️ Comprehensive Step-by-Step Project Walkthrough
+**Phase 1: Environment Setup & Cloud Architecture** 
+
+Before transforming any data, the infrastructure has been securely initialized across the cloud data warehouse and the transformation framework.
+
+**Step 1.1: Google BigQuery Ingestion**
+
+I have created a Google Cloud Platform (GCP) project, initialized a BigQuery dataset instance, and uploaded the raw Kaggle Retail Transactions CSV file.
+
+
+
+
+
+
 
 ## 📈 Core Business Insights Extracted
 Through exploratory data analysis via dbt's analytical playground (`analyses/`), the pipeline successfully uncovers key retail trends:
