@@ -107,7 +107,7 @@ Executed terminal commands dbt test and dbt docs generate to automatically parse
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/1261b1cbc1c10f20b641318193c5bdd3df16aeeb/dbt%20Directed%20Acyclic%20Graph%20(DAG)%20%20Lineage%20graph.png)
 
-
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/55ef90689f9a993d16686fe229f454eef70b285e/Documentation%20Compilation.png)
 
 
 
