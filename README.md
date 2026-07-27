@@ -57,7 +57,7 @@ I have created a Google Cloud Platform (GCP) project, initialized a BigQuery dat
 Before Initializing a new dbt project I created a dbt folder in the User Home Directory that maintains the profiles.yml where database connections and user credentials are stored. Configured profiles.yml to establish a secure connection using a GCP Service Account JSON key, granting dbt permission to execute queries inside BigQuery.
 Here is a dbt interface showing a successful connection test with ‘dbt debug’ command after initializing the new dbt project:
 
-
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/a51929aef6519e0a963be421f71f10e9a5687bae/Successful%20connection%20test%20(dbt%20debug).png)
 
 
 
