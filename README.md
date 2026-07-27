@@ -99,7 +99,7 @@ To guarantee production-grade trust, data assets are documented and evaluated ag
 
 Configured assertion constraints inside model definition YAML files. Applied schema-level validation criteria—such as checking for not_null and unique rules on primary keys—to block bad or corrupted rows from surfacing in reports.
 
-
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/5dafe9d149fe5e697796effcb9a3d109b82242fd/YAML%20file%20configuration%20showing%20testing%20blocks.png)
 
 
 
