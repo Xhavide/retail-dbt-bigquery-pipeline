@@ -109,7 +109,13 @@ Executed terminal commands dbt test and dbt docs generate to automatically parse
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/55ef90689f9a993d16686fe229f454eef70b285e/Documentation%20Compilation.png)
 
+**Phase 5: Business Intelligence Infrastructure**
 
+The final phase surfaces the optimized, physical cloud data marts into a polished, highly fast semantic dashboard for executive decision-makers.
+
+**Step 5.1: Looker Studio Semantic Data Connections**
+
+I opened Looker Studio, connected directly via the BigQuery native connector, and referenced physical gold tables. This bypasses structural processing entirely at runtime, allowing Looker Studio to consume pre-computed metrics immediately.
 
 
 
