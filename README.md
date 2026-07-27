@@ -101,6 +101,10 @@ Configured assertion constraints inside model definition YAML files. Applied sch
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/5dafe9d149fe5e697796effcb9a3d109b82242fd/YAML%20file%20configuration%20showing%20testing%20blocks.png)
 
+**Step 4.2: Data Lineage & Documentation Compilation**
+
+Executed terminal commands dbt test and dbt docs generate to automatically parse code dependencies, evaluate data constraints, and map the full end-to-end lineage network.
+
 
 
 
