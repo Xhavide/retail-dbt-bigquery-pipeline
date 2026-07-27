@@ -60,6 +60,24 @@ Here is a dbt interface showing a successful connection test with â€˜dbt debugâ€
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/a51929aef6519e0a963be421f71f10e9a5687bae/Successful%20connection%20test%20(dbt%20debug).png)
 
 
+**Phase 2: The Staging Layer (Silver Zone)**
+
+This phase focuses on isolating data, standardizing raw columns, fixing structural text discrepancies, and enforcing strong typing.
+
+**Step 2.1: Declaring dbt Sources**
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
