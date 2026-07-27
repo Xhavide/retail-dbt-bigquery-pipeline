@@ -66,6 +66,14 @@ This phase focuses on isolating data, standardizing raw columns, fixing structur
 
 **Step 2.1: Declaring dbt Sources**
 
+Created a sources.yml file to cleanly define the raw BigQuery schema and table locations. 
+
+
+**Step 2.2: Building the Staging Model (stg_retail_sales.sql)**
+
+Wrote an atomic SQL script utilizing the {{ source() }} macro. I converted inconsistent string headers into universal snake_case, used backticks to handle fields containing blank spaces, and wrapped critical fields in SAFE_CAST statements to handle null values gracefully. Configured the model config block to materialize strictly as a dynamic View to keep compute costs at zero until requested.
+
+
 
 
 
