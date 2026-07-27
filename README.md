@@ -73,7 +73,7 @@ Created a sources.yml file to cleanly define the raw BigQuery schema and table l
 
 Wrote an atomic SQL script utilizing the {{ source() }} macro. I converted inconsistent string headers into universal snake_case, used backticks to handle fields containing blank spaces, and wrapped critical fields in SAFE_CAST statements to handle null values gracefully. Configured the model config block to materialize strictly as a dynamic View to keep compute costs at zero until requested.
 
-
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/d78d816162ab2ed9ba85355ac791fe6e0fc60599/stg_retail_sales.sql%20model%20file.png)
 
 
 
