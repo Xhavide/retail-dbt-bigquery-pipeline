@@ -91,6 +91,13 @@ Built an analytical time-series script. Applied BigQuery date extraction functio
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/4da49424f04ced4edb1a86e5613e95c321c4a5b3/mart_sales_time_and_trends.sql.png)
 
+**Phase 4: Quality Assurance, Testing, & Lineage** 
+
+To guarantee production-grade trust, data assets are documented and evaluated against testing suites before deployment.
+
+**Step 4.1: Writing Schema Testing Suites (schema.yml)**
+
+Configured assertion constraints inside model definition YAML files. Applied schema-level validation criteria—such as checking for not_null and unique rules on primary keys—to block bad or corrupted rows from surfacing in reports.
 
 
 
