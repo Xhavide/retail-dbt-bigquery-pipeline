@@ -50,7 +50,7 @@ Before transforming any data, the infrastructure has been securely initialized a
 
 I have created a Google Cloud Platform (GCP) project, initialized a BigQuery dataset instance, and uploaded the raw Kaggle Retail Transactions CSV file.
 
-
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/3508450fb81171306161b04b60d915babfa13e98/Google%20BigQuery%20Ingestion.png)
 
 
 
