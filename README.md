@@ -83,7 +83,7 @@ Here, the standardized staging views are joined, aggregated, and compiled into s
 
 Developed a dimensional metrics script. Built conditional logic (CASE WHEN) to cleanly segment ages into recognized cohorts (Gen Z, Millennials, Gen X, Boomers). I have simultaneously grouped prices into analytical tiers to track how spending habits fluctuate across demographic lines.
 
-
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/441a20e6fd847b0b84cd903370f38c858b26ab53/aggregation%20functions%20for%20user%20cohorts.png)
 
 
 
