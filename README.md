@@ -118,33 +118,6 @@ The final phase surfaces the optimized, physical cloud data marts into a polishe
 I opened Looker Studio, connected directly via the BigQuery native connector, and referenced physical gold tables. This bypasses structural processing entirely at runtime, allowing Looker Studio to consume pre-computed metrics immediately.
 
 
-
-
-
-
-
-
-
-
-
-## 📈 Core Business Insights Extracted
-Through exploratory data analysis via dbt's analytical playground (`analyses/`), the pipeline successfully uncovers key retail trends:
-* **High-Value Demographic:** **Gen X Males** generate the highest singular revenue stream, specifically dominating the purchase of **Premium Tier Electronics (>$100)**.
-* **Product Category Appeal:** **Premium Clothing** maintains the highest cross-gender appeal, generating identical revenue patterns among both male and female groups.
-* **Seasonal Micro-Trends:** **Winter** stands as the ultimate peak seasonal revenue driver, heavily populated by **Medium Basket (2-3 items)** transactions in clothing and beauty. 
-
-## 🛡️ Data Quality & Pipeline Integrity Testing
-Automated data assertions run across the ecosystem (`dbt test`) to safeguard metric tracking:
-* **Primary Key Invariance:** The `transaction_id` is subjected to continuous `unique` and `not_null` constraints.
-* **Financial Controls:** Key revenue pillars like `gross_revenue` and `cumulative_spending` run schema tests to validate that financial metrics never drop into corrupt negative bounds.
-
-## 🛠️ Tech Stack & Setup
-* **Transformations & Testing:** dbt Core (v1.11)
-* **Cloud Data Warehouse:** Google BigQuery Sandbox (US Multi-Region)
-* **Environment Management:** Isolated Python 3.13 Virtual Environments (`dbt-env`)
-* **Version Control:** Git & GitHub Workflow
-------
-
 ## 📊 Interactive Analytics Dashboard (Google Looker Studio)
 An enterprise-grade executive dashboard built to visualize customer cohorts and sales trends. 
 
@@ -160,7 +133,28 @@ An enterprise-grade executive dashboard built to visualize customer cohorts and 
 
 🔗 [Explore the Live Interactive Dashboard Here](https://datastudio.google.com/s/pjSqJ-0k70Y)
 
+------------
 
+## 🛡️ Data Quality & Pipeline Integrity Testing
+Automated data assertions run across the ecosystem (`dbt test`) to safeguard metric tracking:
+* **Primary Key Invariance:** The `transaction_id` is subjected to continuous `unique` and `not_null` constraints.
+* **Financial Controls:** Key revenue pillars like `gross_revenue` and `cumulative_spending` run schema tests to validate that financial metrics never drop into corrupt negative bounds.
+
+-----------
+
+## 📈 Core Business Insights Extracted
+Through exploratory data analysis via dbt's analytical playground (`analyses/`), the pipeline successfully uncovers key retail trends:
+* **High-Value Demographic:** **Gen X Males** generate the highest singular revenue stream, specifically dominating the purchase of **Premium Tier Electronics (>$100)**.
+* **Product Category Appeal:** **Premium Clothing** maintains the highest cross-gender appeal, generating identical revenue patterns among both male and female groups.
+* **Seasonal Micro-Trends:** **Winter** stands as the ultimate peak seasonal revenue driver, heavily populated by **Medium Basket (2-3 items)** transactions in clothing and beauty. 
+
+-------------
+
+## 🛠️ Tech Stack & Setup
+* **Transformations & Testing:** dbt Core (v1.11)
+* **Cloud Data Warehouse:** Google BigQuery Sandbox (US Multi-Region)
+* **Environment Management:** Isolated Python 3.13 Virtual Environments (`dbt-env`)
+* **Version Control:** Git & GitHub Workflow
 
 
 
