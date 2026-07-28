@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: retail_source_data
+    database: "dbt-bigquery-project-501223"
+    schema: dbt_project_dataset         
+    tables:
+      - name: retail_sales_dataset      

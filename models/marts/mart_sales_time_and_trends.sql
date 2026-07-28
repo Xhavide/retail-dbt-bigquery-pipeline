@@ -7,7 +7,7 @@ WITH time_features AS (
         transaction_id,
         transaction_date,
         product_category,
-        quantity_purchased,
+        quantity,
         total_amount,
         
         -- Time Patterns: Extract Month and Year
@@ -25,8 +25,8 @@ WITH time_features AS (
 
         -- Basket Size Behavior: Segment by quantity bought per transaction
         CASE 
-            WHEN quantity_purchased = 1 THEN 'Single Item Basket'
-            WHEN quantity_purchased BETWEEN 2 AND 3 THEN 'Medium Basket (2-3)'
+            WHEN quantity = 1 THEN 'Single Item Basket'
+            WHEN quantity BETWEEN 2 AND 3 THEN 'Medium Basket (2-3)'
             ELSE 'Bulk Basket (4+)'
         END AS basket_size_segment
 
@@ -41,7 +41,7 @@ SELECT
     basket_size_segment,
     product_category,
     COUNT(transaction_id) AS total_orders,
-    SUM(quantity_purchased) AS total_units_sold,
+    SUM(quantity) AS total_units_sold,
     ROUND(SUM(total_amount), 2) AS gross_revenue,
     ROUND(AVG(total_amount), 2) AS avg_order_value
 FROM time_features
