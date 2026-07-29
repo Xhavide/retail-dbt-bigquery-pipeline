@@ -55,13 +55,15 @@ The data architecture implements a formalized Medallion (Multi-Layer) Architectu
 ---------
 
 ## 🛠️ Comprehensive Step-by-Step Project Walkthrough
-**Phase 1: Environment Setup & Cloud Architecture** 
 
-Before transforming any data, the infrastructure has been securely initialized across the cloud data warehouse and the transformation framework.
+### Phase 1: Environment Setup & Cloud Architecture
 
-**Step 1.1: Google BigQuery Ingestion**
+Before transforming any data, the infrastructure was securely initialized across the cloud data warehouse and the transformation framework.
 
-I have created a Google Cloud Platform (GCP) project, initialized a BigQuery dataset instance, and uploaded the raw Kaggle Retail Transactions CSV file.
+#### Step 1.1: Google BigQuery Ingestion
+Created a Google Cloud Platform (GCP) project, initialized a BigQuery dataset instance, and uploaded the raw Kaggle Retail Transactions CSV file.
+
+*Below is the BigQuery dataset console showing the raw uploaded table*
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/3508450fb81171306161b04b60d915babfa13e98/Google%20BigQuery%20Ingestion.png)
 
