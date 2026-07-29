@@ -67,10 +67,11 @@ Created a Google Cloud Platform (GCP) project, initialized a BigQuery dataset in
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/3508450fb81171306161b04b60d915babfa13e98/Google%20BigQuery%20Ingestion.png)
 
-**Step 1.2: dbt Cloud / dbt Core Initialization**
+#### Step 1.2: dbt Local Configuration & Initialization
 
-Before Initializing a new dbt project I created a dbt folder in the User Home Directory that maintains the profiles.yml where database connections and user credentials are stored. Configured profiles.yml to establish a secure connection using a GCP Service Account JSON key, granting dbt permission to execute queries inside BigQuery.
-Here is a dbt interface showing a successful connection test with ‘dbt debug’ command after initializing the new dbt project:
+Established an isolated local Python virtual environment (`dbt-env`), installed `dbt-core` and `dbt-bigquery`, and configured a centralized `profiles.yml` utilizing service account JSON credentials to manage secure, encrypted cloud data warehouse connections.
+
+*Below is the dbt interface showing a successful connection test using the `dbt debug` command after initializing the workspace:*
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/a51929aef6519e0a963be421f71f10e9a5687bae/Successful%20connection%20test%20(dbt%20debug).png)
 
