@@ -1,43 +1,56 @@
 # End-to-End Retail Data Pipeline (dbt Core + Google BigQuery)
 
-An enterprise-grade ELT data pipeline built using **dbt Core** and hosted on a cloud **Google BigQuery Data Warehouse**. This project transforms raw, chaotic transactional retail sales data from Kaggle into structured, optimized dimensional analytical data marts ready for Business Intelligence dashboarding.
+An advanced ELT data engineering pipeline and business intelligence infrastructure built to process, model, and visualize high-volume transactional retail data. This project transforms chaotic, raw point-of-sale data into optimized, audit-ready data marts using dbt Core and Google BigQuery, culminating in a production-grade executive dashboard hosted on Google Looker Studio.
+
+👉 ** [Explore the Live Interactive Dashboard Here](https://datastudio.google.com/s/pjSqJ-0k70Y)**
+
+## 🚀 Executive Project Summary
+Modern retail environments generate massive volumes of transactional data that remain underutilized due to fragmented structures and unoptimized query paths. This project establishes a robust data lifecycle ecosystem that bridges the gap between raw data collection and strategic executive decision-making. 
+
+By applying rigorous data warehousing principles, software engineering best practices via dbt, and multi-dimensional reporting structures, this infrastructure slashes database compute costs, guarantees strict data isolation, and delivers sub-second dashboard query latency for enterprise stakeholders.
 
 --------
-## 🗂 Dataset
-The dataset used in this project is a synthetic dataset from Kaggle focused in retail operations and customer interactions which contains key details such as:
+## 🗂️ Dataset Overview
 
-- Transaction ID
-- Date
-- Customer ID
-- Gender
-- Age
-- Product Category
-- Quantity
-- Price per Unit
-- Total Amount
+The project operates on a transactional retail dataset capturing point-of-sale (POS) operations and customer interactions. Key data features include:
+* **Core Ledger:** Transaction ID, Transaction Date, Customer ID
+* **Demographics:** Age, Gender
+* **Sales Matrix:** Product Category, Quantity, Price per Unit, Total Amount
 
 ---------
 
-## 🎯 Business Questions
-- How does customer age and gender influence their purchasing behavior?
-- Are there discernible patterns in sales across different time periods?
-- Which product categories hold the highest appeal among customers?
-- What are the relationships between age, spending, and product preferences?
-- How do customers adapt their shopping habits during seasonal trends?
-- Are there distinct purchasing behaviors based on the number of items bought per transaction?
-- What insights can be gleaned from the distribution of product prices within each category?
+
+### 🎯 Business Questions Addressed
+
+* How do customer age cohorts and gender identifiers influence purchasing behavior?
+* Are there discernible, macro-level patterns in revenue across different seasonal periods?
+* Which specific product categories hold the highest transactional appeal among customers?
+* What are the relationships between age, spending tiers, and product preferences?
+* Are there distinct purchasing behaviors based on the number of items bought per transaction?
+* What insights can be gleaned from the distribution of product prices within each category?
 
 ------------
 
-
 ## 🏗️ Architecture & Data Lineage
-The data architecture follows the standard **Medallion (Multi-Layer) Architecture** pattern to guarantee clean data isolation:
 
-1. **Source Layer (Raw):** Ingested Kaggle Retail Transactions dataset containing raw POS data rows.
-2. **Staging Layer (Silver/Clean):** `stg_retail_sales` handles column standardization, handles syntax snake_casing, maps problematic column spaces using safe backtick compilation, and applies strict datatyping casting (`SAFE_CAST`). Materialized as a virtual **View** to reduce database duplication storage costs.
-3. **Mart Layer (Gold/Analytics):** Pre-computes complex heavy aggregates and mathematical metrics. Materialized as physical **Tables** to optimize query latency for downstream reporting.
-   * `mart_customer_behavior_and_pricing`: Segments user age cohorts (Gen Z, Millennials, Gen X, Boomers) and price brackets against spending.
-   * `mart_sales_time_and_trends`: Extracts time patterns, maps transactions to seasons, and classifies basket sizes based on unit quantities.
+The data architecture implements a formalized Medallion (Multi-Layer) Architecture pattern within Google BigQuery to decouple compute, ensure strict schema compliance, and maintain clean lineage isolation:
+
+[ Raw CSV Ingestion ] ──> [ Google BigQuery DDL ] ──> [ Staging View (Silver) ] ──> [ Gold Data Marts (Tables) ] ──> [ Looker Studio BI Layer ] 
+
+### 1. Source Layer (Raw Ingestion & Schema Alignment)
+* Lands the raw, uncompressed retail text rows into BigQuery.
+* **Optimization Phase:** Enforced structural schema alignment directly via BigQuery Data Definition Language (DDL). Explicitly resolved column alignment anomalies (mismatched string headers) and strictly typecast raw fields to their natural formats (`INT64` for identifiers, native `DATE` objects, and `FLOAT64` for currency metrics). This eliminates execution-level parsing latency downstream.
+
+### 2. Staging Layer (Silver Zone / Clean & Modular)
+* **Model:** `stg_retail_sales`
+* **Transformation Mechanics:** Configured directly via a production-grade `sources.yml` metadata boundary file to track explicit upstream lineage. Bypasses chaotic parsing strings to surface uniform, standardized fields ready for dimensional consumption.
+* **Materialization Strategy:** Materialized as a virtual **View**. This design pattern minimizes static cloud storage duplication costs and ensures that downstream elements dynamically read raw definitions without indexing duplicate blocks.
+
+### 3. Mart Layer (Gold Zone / Analytics & Dimensional Modeling)
+* **Transformation Mechanics:** Pre-computes complex, heavy mathematical aggregates and business conditional logic, completely eliminating raw calculations during live dashboard sessions.
+* **Materialization Strategy:** Configured as physical, materialized **Tables** to radically optimize query latency, cache aggregate result sets, and eliminate runtime slot-time compute costs.
+* **`mart_customer_behavior_and_pricing`:** Isolates purchasing habits by dynamically segmenting consumer demographics into structured age cohorts (Gen Z, Millennials, Gen X, Boomers) cross-referenced against custom product tier distributions (Budget, Mid-Range, Premium Tiers).
+* **`mart_sales_time_and_trends`:** Executes time-series extraction, mapping raw timestamps into distinct calendar components, localized business quarters, and seasonal cycles (Winter, Spring, Summer, Fall) while profiling transaction basket scales based on unit quantities.
 
 ---------
 
