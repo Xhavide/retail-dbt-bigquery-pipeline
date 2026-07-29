@@ -76,48 +76,48 @@ Established an isolated local Python virtual environment (`dbt-env`), installed 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/a51929aef6519e0a963be421f71f10e9a5687bae/Successful%20connection%20test%20(dbt%20debug).png)
 
 
-**Phase 2: The Staging Layer (Silver Zone)**
+### Phase 2: The Staging Layer (Silver Zone) 
 
 This phase focuses on isolating data, standardizing raw columns, fixing structural text discrepancies, and enforcing strong typing.
 
-**Step 2.1: Declaring dbt Sources**
+#### Step 2.1: Declaring dbt Sources
 
 Created a sources.yml file to cleanly define the raw BigQuery schema and table locations. 
 
 
-**Step 2.2: Building the Staging Model (stg_retail_sales.sql)**
+#### Step 2.2: Building the Staging Model (stg_retail_sales.sql)
 
 Wrote an atomic SQL script utilizing the {{ source() }} macro. I converted inconsistent string headers into universal snake_case, used backticks to handle fields containing blank spaces, and wrapped critical fields in SAFE_CAST statements to handle null values gracefully. Configured the model config block to materialize strictly as a dynamic View to keep compute costs at zero until requested.
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/d78d816162ab2ed9ba85355ac791fe6e0fc60599/stg_retail_sales.sql%20model%20file.png)
 
-**Phase 3: The Analytical Mart Layer (Gold Zone)** 
+### Phase 3: The Analytical Mart Layer (Gold Zone)
 
 Here, the standardized staging views are joined, aggregated, and compiled into specialized, physically materialized analytical tables optimized for fast query retrieval.
 
-**Step 3.1: Constructing mart_customer_behavior_and_pricing.sql**
+#### Step 3.1: Constructing mart_customer_behavior_and_pricing.sql
 
 Developed a dimensional metrics script. Built conditional logic (CASE WHEN) to cleanly segment ages into recognized cohorts (Gen Z, Millennials, Gen X, Boomers). I have simultaneously grouped prices into analytical tiers to track how spending habits fluctuate across demographic lines.
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/441a20e6fd847b0b84cd903370f38c858b26ab53/aggregation%20functions%20for%20user%20cohorts.png)
 
-**Step 3.2: Constructing mart_sales_time_and_trends.sql** 
+#### Step 3.2: Constructing mart_sales_time_and_trends.sql
 
 Built an analytical time-series script. Applied BigQuery date extraction functions to translate raw timestamps into distinct seasonal buckets (Winter, Spring, Summer, Fall) and calculated unit boundaries to isolate bulk order patterns from individual sales. And finely materialized both mart models as physical Tables in dbt_project.yml to minimize report compute latency.
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/4da49424f04ced4edb1a86e5613e95c321c4a5b3/mart_sales_time_and_trends.sql.png)
 
-**Phase 4: Quality Assurance, Testing, & Lineage** 
+### Phase 4: Quality Assurance, Testing, & Lineage 
 
 To guarantee production-grade trust, data assets are documented and evaluated against testing suites before deployment.
 
-**Step 4.1: Writing Schema Testing Suites (schema.yml)**
+#### Step 4.1: Writing Schema Testing Suites (schema.yml)
 
 Configured assertion constraints inside model definition YAML files. Applied schema-level validation criteria—such as checking for not_null and unique rules on primary keys—to block bad or corrupted rows from surfacing in reports.
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/5dafe9d149fe5e697796effcb9a3d109b82242fd/YAML%20file%20configuration%20showing%20testing%20blocks.png)
 
-**Step 4.2: Data Lineage & Documentation Compilation**
+#### Step 4.2: Data Lineage & Documentation Compilation
 
 Executed terminal commands dbt test and dbt docs generate to automatically parse code dependencies, evaluate data constraints, and map the full end-to-end lineage network.
 
@@ -125,11 +125,11 @@ Executed terminal commands dbt test and dbt docs generate to automatically parse
 
 ![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/55ef90689f9a993d16686fe229f454eef70b285e/Documentation%20Compilation.png)
 
-**Phase 5: Business Intelligence Infrastructure**
+### Phase 5: Business Intelligence Infrastructure
 
 The final phase surfaces the optimized, physical cloud data marts into a polished, highly fast semantic dashboard for executive decision-makers.
 
-**Step 5.1: Looker Studio Semantic Data Connections**
+#### Step 5.1: Looker Studio Semantic Data Connections
 
 I opened Looker Studio, connected directly via the BigQuery native connector, and referenced physical gold tables. This bypasses structural processing entirely at runtime, allowing Looker Studio to consume pre-computed metrics immediately.
 
