@@ -2,7 +2,7 @@
 
 An advanced ELT data engineering pipeline and business intelligence infrastructure built to process, model, and visualize high-volume transactional retail data. This project transforms chaotic, raw point-of-sale data into optimized, audit-ready data marts using dbt Core and Google BigQuery, culminating in a production-grade executive dashboard hosted on Google Looker Studio.
 
-👉 ** [Explore the Live Interactive Dashboard Here](https://datastudio.google.com/s/pjSqJ-0k70Y)**
+Explore the Live Interactive Dashboard 👉  [Here](https://datastudio.google.com/s/pjSqJ-0k70Y)
 
 ## 🚀 Executive Project Summary
 Modern retail environments generate massive volumes of transactional data that remain underutilized due to fragmented structures and unoptimized query paths. This project establishes a robust data lifecycle ecosystem that bridges the gap between raw data collection and strategic executive decision-making. 
