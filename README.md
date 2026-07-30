@@ -158,6 +158,15 @@ Automated data assertions run across the ecosystem (`dbt test`) to safeguard met
 
 -----------
 
+## 📈 Core Business Insights and Recommendations 
+
+
+| Business Insight | Business Recommendation |
+| --- | --- |
+| * **High-Value Demographic:** **Gen X Males** generate the highest singular revenue stream, specifically dominating the purchase of **Premium Tier Electronics (>$100)**. <br> * **Product Category Appeal:** **Premium Clothing** maintains the highest cross-gender appeal, generating identical revenue patterns among both male and female groups. <br> * **Seasonal Micro-Trends:** **Winter** stands as the ultimate peak seasonal revenue driver, heavily populated by **Medium Basket (2-3 items)** transactions in clothing and beauty. | * **Targeted Ad Spend for Gen X Men:** Since Gen X Men represent the highest-value singular revenue stream (specifically purchasing Premium Tier Electronics >$100), marketing budgets should be heavily reallocated toward targeted digital campaigns for this cohort, bundling high-end electronics with complementary accessories. <br> * **Cross-Gender Apparel Bundling:** Premium Clothing performs identically across both male and female groups. The business should implement unisex marketing campaigns and multi-buy promotions (e.g., "Buy One, Get One 50% Off") to increase the average order value across this universally popular category. <br> * **Winter Inventory & Supply Chain Optimization:** Winter stands as the peak seasonal revenue driver, characterized by "Medium Baskets" (2–3 items per transaction) in clothing and beauty. Supply chain managers should increase safety stock levels for these categories starting in late Fall to prevent stockouts, while marketing should push high-margin holiday gift bundles. |
+
+
+
 ## 📈 Core Business Insights Extracted
 Through exploratory data analysis via dbt's analytical playground (`analyses/`), the pipeline successfully uncovers key retail trends:
 * **High-Value Demographic:** **Gen X Males** generate the highest singular revenue stream, specifically dominating the purchase of **Premium Tier Electronics (>$100)**.
