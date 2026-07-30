@@ -89,7 +89,7 @@ Built modular source configuration file layouts (`sources.yml`) to decouple phys
 Modeled the `stg_retail_sales.sql` abstraction view, executing safe schema pruning and field normalization.
 Configured the model config block to materialize strictly as a dynamic View to keep compute costs at zero until requested.
 
-![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/d78d816162ab2ed9ba85355ac791fe6e0fc60599/stg_retail_sales.sql%20model%20file.png)
+![](https://github.com/Xhavide/retail-dbt-bigquery-pipeline/blob/016cf39be16e3ea5b0243632f9643d6a2988bc30/stg_retail_sales.sql.png)
 
 ### Phase 3: The Analytical Mart Layer (Gold Zone)
 
