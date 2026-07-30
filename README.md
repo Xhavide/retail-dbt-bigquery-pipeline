@@ -131,8 +131,8 @@ The final phase surfaces the optimized, physical cloud data marts into a polishe
 
 #### Step 5.1: Looker Studio Semantic Data Connections
 
-I opened Looker Studio, connected directly via the BigQuery native connector, and referenced physical gold tables. This bypasses structural processing entirely at runtime, allowing Looker Studio to consume pre-computed metrics immediately.
-
+I opened Looker Studio, connected directly via the BigQuery native connector, and referenced physical gold tables. 
+Engineered a clean visual reporting canvas utilizing high-level scorecard vectors, multi-dimensional cohort distributions, and interactive filter controls to enable real-time strategic data slicing.
 
 ## 📊 Interactive Analytics Dashboard (Google Looker Studio)
 An enterprise-grade executive dashboard built to visualize customer cohorts and sales trends. 
@@ -166,13 +166,14 @@ Through exploratory data analysis via dbt's analytical playground (`analyses/`),
 
 -------------
 
-## 🛠️ Tech Stack & Setup
-* **Transformations & Testing:** dbt Core (v1.11)
-* **Cloud Data Warehouse:** Google BigQuery Sandbox (US Multi-Region)
-* **Environment Management:** Isolated Python 3.13 Virtual Environments (`dbt-env`)
-* **Version Control:** Git & GitHub Workflow
 
+## 🛠️ Tech Stack & Pipeline Tooling
 
+* **Data Ingestion & Warehouse Management:** Google BigQuery Studio (SQL DDL/DML)
+* **Transformations & Workflow Orchestration:** dbt Core (v1.11)
+* **Visualizations & BI Semantic Layer:** Google Looker Studio
+* **Environment Control:** Python Virtual Environments (`dbt-env`) & PowerShell Scripting
+* **Version Control & CI/CD Tracking:** Git & GitHub Distributed Workspaces
 
 
 
