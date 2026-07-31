@@ -183,6 +183,19 @@ Based on the demographic and seasonal trends uncovered by the data pipeline, the
 <br> •  **Product Category Appeal:** **Premium Clothing** maintains the highest cross-gender appeal, generating identical revenue patterns among both male and female groups. | •  **Cross-Gender Apparel Bundling:** Premium Clothing performs identically across both male and female groups. The business should implement unisex marketing campaigns and multi-buy promotions (e.g., "Buy One, Get One 50% Off") to increase the average order value across this universally popular category.
 <br>•  **Seasonal Micro-Trends:** **Winter** stands as the ultimate peak seasonal revenue driver, heavily populated by **Medium Basket (2-3 items)** transactions in clothing and beauty. |• **Winter Inventory & Supply Chain Optimization:** Winter stands as the peak seasonal revenue driver, characterized by "Medium Baskets" (2–3 items per transaction) in clothing and beauty. Supply chain managers should increase safety stock levels for these categories starting in late Fall to prevent stockouts, while marketing should push high-margin holiday gift bundles.|
 
+----------
+
+
+## 👩‍💻 Author
+
+**Xhavide Zymberi**
+
+Data Analytics | SQL | Tableau | dbt | Marketing Analytics
+
+LinkedIn [Profile](https://www.linkedin.com/in/xhavide-zymberi/)
+
+GitHub [Profile](https://github.com/Xhavide)
+
 
 
 
